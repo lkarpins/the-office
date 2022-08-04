@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
+import QuestionContainer from "./Components/QuestionContainer/QuestionContainer";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      quote: [],
+      quotes: [],
       character: [],
       error: false,
     };
@@ -18,8 +19,8 @@ class App extends Component {
     fetch("https://the-office-api-11.herokuapp.com/")
       .then((res) => res.json())
       .then((quotes) => {
-        console.log(quotes);
-        this.setState({ quotes: quotes, loading: false });
+        this.setState({ quotes: quotes.quotes, loading: false });
+        console.log(quotes.quotes);
       })
       .catch((error) => {
         this.setState({
@@ -33,7 +34,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">the office.</header>
-        <p></p>
+        <div>
+          <QuestionContainer quotes={this.state.quotes} />
+        </div>
       </div>
     );
   }
