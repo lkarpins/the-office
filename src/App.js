@@ -23,6 +23,7 @@ class App extends Component {
       .then((quotes) => {
         this.setState({
           quotes: quotes.quotes,
+          characters: quotes.characters,
           loading: false,
         });
       })
@@ -36,7 +37,7 @@ class App extends Component {
 
   randomizeQuote = () => {
     const randomQuote =
-      this.quotes[Math.floor(Math.random() * this.quotes.length)];
+      this.state.quotes[Math.floor(Math.random() * this.state.quotes.length)];
     return randomQuote;
   };
 
