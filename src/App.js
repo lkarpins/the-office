@@ -9,7 +9,7 @@ class App extends Component {
     super();
     this.state = {
       quotes: [],
-      character: [],
+      characters: [],
       error: false,
     };
   }
@@ -21,8 +21,10 @@ class App extends Component {
     fetch("https://the-office-api-11.herokuapp.com/")
       .then((res) => res.json())
       .then((quotes) => {
-        this.setState({ quotes: quotes.quotes, loading: false });
-        console.log(quotes.quotes);
+        this.setState({
+          quotes: quotes.quotes,
+          loading: false,
+        });
       })
       .catch((error) => {
         this.setState({
@@ -30,6 +32,12 @@ class App extends Component {
           loading: false,
         });
       });
+  };
+
+  randomizeQuote = () => {
+    const randomQuote =
+      this.quotes[Math.floor(Math.random() * this.quotes.length)];
+    return randomQuote;
   };
 
   render() {
@@ -40,11 +48,13 @@ class App extends Component {
       <div className="App">
         {this.state.error && (
           <h1 className="error-message" data-cy="error">
-            Uh oh! Something went wrong, please try again!
+            <div className="error-box">
+              Uh oh! Something went wrong, please try again!
+            </div>
           </h1>
         )}
-
         <Navigation />
+        <Route />
         <QuestionContainer quotes={this.state.quotes} />
         <div></div>
       </div>

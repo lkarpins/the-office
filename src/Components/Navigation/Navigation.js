@@ -5,7 +5,7 @@ export const Navigation = () => {
   return (
     <nav>
       <h1 className="logo" data-cy="logo">
-        DUNDER-MIFFLIN DEVOTEE
+        The Office-ionado
       </h1>
     </nav>
   );
