@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import { Navigation } from "./Components/Navigation/Navigation";
 import QuestionContainer from "./Components/QuestionContainer/QuestionContainer";
 
 class App extends Component {
@@ -33,10 +34,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">the office.</header>
-        <div>
-          <QuestionContainer quotes={this.state.quotes} />
-        </div>
+        <Navigation />
+        <QuestionContainer quotes={this.state.quotes} />
+        <div></div>
       </div>
     );
   }

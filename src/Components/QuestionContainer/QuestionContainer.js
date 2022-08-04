@@ -6,8 +6,8 @@ const QuestionContainer = ({ quotes }) => {
   const questionCard = quotes.map((quote) => {
     return (
       <QuestionView
-        id={quote.id}
-        key={quote.id}
+        id={quote._id}
+        key={quote._id}
         content={quote.content}
         character={quote.character}
       />
