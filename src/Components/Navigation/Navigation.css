@@ -6,7 +6,7 @@ nav {
   flex-flow: row nowrap;
   padding: 1rem 2rem;
   height: 5rem;
-  position: sticky;
+  justify-content: center;
   top: 0;
   left: 0;
   z-index: 2;

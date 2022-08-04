@@ -14,7 +14,7 @@ const QuestionContainer = ({ quotes }) => {
     );
   });
 
-  return <div className="question-card">{questionCard}</div>;
+  return <div className="question-container">{questionCard}</div>;
 };
 
 export default QuestionContainer;

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./QuestionView.css";
 
 export const QuestionView = ({ id, content, character }) => {
   return (
