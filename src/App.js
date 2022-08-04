@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { Navigation } from "./Components/Navigation/Navigation";
 import QuestionContainer from "./Components/QuestionContainer/QuestionContainer";
+import { Route } from "react-router-dom";
 
 class App extends Component {
   constructor() {
@@ -32,8 +33,17 @@ class App extends Component {
   };
 
   render() {
+    if (this.state.loading) {
+      return <p className="loading">LOADING!!!</p>;
+    }
     return (
       <div className="App">
+        {this.state.error && (
+          <h1 className="error-message" data-cy="error">
+            Uh oh! Something went wrong, please try again!
+          </h1>
+        )}
+
         <Navigation />
         <QuestionContainer quotes={this.state.quotes} />
         <div></div>
