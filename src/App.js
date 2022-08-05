@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Navigation } from "./Components/Navigation/Navigation";
-import QuestionContainer from "./Components/QuestionContainer/QuestionContainer";
-import { Route } from "react-router-dom";
+import { QuestionContainer } from "./Components/QuestionContainer/QuestionContainer";
+import { Route, Switch } from "react-router-dom";
 import { HomeView } from "./Components/HomeView/HomeView";
 
 class App extends Component {
@@ -58,11 +58,16 @@ class App extends Component {
             </div>
           </h1>
         )}
-        <div>
-          <Navigation />
-        </div>
-        <Route exact path="/" render={() => <HomeView />} />
-        <QuestionContainer quotes={this.state.quotes} />
+        <Navigation />
+        <Switch>
+          <Route exact path="/">
+            <HomeView />
+          </Route>
+
+          <Route exact path="/quotes">
+            <QuestionContainer quotes={this.state.quotes} />
+          </Route>
+        </Switch>
       </div>
     );
   }

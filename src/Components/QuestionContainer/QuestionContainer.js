@@ -2,8 +2,7 @@ import React from "react";
 import { QuestionView } from "../QuestionView/QuestionView";
 import "./QuestionContainer.css";
 
-const QuestionContainer = ({ quotes }) => {
-  const unniqueQuotes = [];
+export const QuestionContainer = ({ quotes }) => {
   const questionCard = quotes.map((quote) => {
     return (
       <QuestionView
@@ -17,5 +16,3 @@ const QuestionContainer = ({ quotes }) => {
 
   return <div className="question-container">{questionCard}</div>;
 };
-
-export default QuestionContainer;
