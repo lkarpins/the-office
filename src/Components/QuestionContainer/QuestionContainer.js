@@ -3,6 +3,7 @@ import { QuestionView } from "../QuestionView/QuestionView";
 import "./QuestionContainer.css";
 
 const QuestionContainer = ({ quotes }) => {
+  const unniqueQuotes = [];
   const questionCard = quotes.map((quote) => {
     return (
       <QuestionView

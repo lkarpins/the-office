@@ -3,6 +3,7 @@ import "./App.css";
 import { Navigation } from "./Components/Navigation/Navigation";
 import QuestionContainer from "./Components/QuestionContainer/QuestionContainer";
 import { Route } from "react-router-dom";
+import { HomeView } from "./Components/HomeView/HomeView";
 
 class App extends Component {
   constructor() {
@@ -10,6 +11,7 @@ class App extends Component {
     this.state = {
       quotes: [],
       characters: [],
+      selectedQuotes: {},
       error: false,
     };
   }
@@ -26,6 +28,7 @@ class App extends Component {
           characters: quotes.characters,
           loading: false,
         });
+        this.randomizeQuote();
       })
       .catch((error) => {
         this.setState({
@@ -38,6 +41,7 @@ class App extends Component {
   randomizeQuote = () => {
     const randomQuote =
       this.state.quotes[Math.floor(Math.random() * this.state.quotes.length)];
+    console.log(randomQuote);
     return randomQuote;
   };
 
@@ -54,10 +58,11 @@ class App extends Component {
             </div>
           </h1>
         )}
-        <Navigation />
-        <Route />
+        <div>
+          <Navigation />
+        </div>
+        <Route exact path="/" render={() => <HomeView />} />
         <QuestionContainer quotes={this.state.quotes} />
-        <div></div>
       </div>
     );
   }
