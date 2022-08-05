@@ -7,7 +7,7 @@ export const QuestionView = ({ id, content, character }) => {
       <h3>Who Stated...?</h3>
       <p>{content}</p>
       <div className="hidden-box">
-        <p>
+        <p hidden>
           {character.firstname} {character.lastname}
         </p>
       </div>

@@ -10,8 +10,7 @@ class App extends Component {
     super();
     this.state = {
       quotes: [],
-      characters: [],
-      selectedQuotes: {},
+      filteredQuotes: [],
       error: false,
     };
   }
@@ -25,10 +24,8 @@ class App extends Component {
       .then((quotes) => {
         this.setState({
           quotes: quotes.quotes,
-          characters: quotes.characters,
           loading: false,
         });
-        this.randomizeQuote();
       })
       .catch((error) => {
         this.setState({
@@ -38,11 +35,20 @@ class App extends Component {
       });
   };
 
-  randomizeQuote = () => {
-    const randomQuote =
-      this.state.quotes[Math.floor(Math.random() * this.state.quotes.length)];
-    console.log(randomQuote);
-    return randomQuote;
+  searchQuotes = (event) => {
+    const { value } = event.target;
+    const searchedQuotes = this.state.quotes.filter((quote) => {
+      if (quote.content.toLowerCase().includes(value.toLowerCase())) {
+        return quote;
+      }
+    });
+    this.setState({ filteredQuotes: searchedQuotes });
+  };
+
+  selectQuotesToRender = () => {
+    return !this.state.filteredQuotes.length
+      ? this.state.quotes
+      : this.state.filteredQuotes;
   };
 
   render() {
@@ -64,9 +70,27 @@ class App extends Component {
             <HomeView />
           </Route>
 
-          <Route exact path="/quotes">
-            <QuestionContainer quotes={this.state.quotes} />
-          </Route>
+          <Route
+            exact
+            path="/quotes"
+            render={() => (
+              <>
+                <label className="label" for="search-from">
+                  Search Quotes: <br></br>
+                  <input
+                    type="text"
+                    data-cy="search"
+                    placeholder="Search Quotes"
+                    name="search-form"
+                    className="input"
+                    aria-label="search quoes"
+                    onChange={(event) => this.searchQuotes(event)}
+                  />
+                </label>
+                <QuestionContainer quotes={this.selectQuotesToRender()} />
+              </>
+            )}
+          />
         </Switch>
       </div>
     );
