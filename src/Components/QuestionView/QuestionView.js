@@ -6,9 +6,11 @@ export const QuestionView = ({ id, content, character }) => {
     <div className="question-view">
       <h3>Who Stated...?</h3>
       <p>{content}</p>
-      <p>
-        {character.firstname} {character.lastname}
-      </p>
+      <div className="hidden-box">
+        <p>
+          {character.firstname} {character.lastname}
+        </p>
+      </div>
     </div>
   );
 };
