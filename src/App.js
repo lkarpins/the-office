@@ -75,18 +75,20 @@ class App extends Component {
             path="/quotes"
             render={() => (
               <>
-                <label className="label" for="search-from">
-                  Search Quotes: <br></br>
-                  <input
-                    type="text"
-                    data-cy="search"
-                    placeholder="Search Quotes"
-                    name="search-form"
-                    className="input"
-                    aria-label="search quoes"
-                    onChange={(event) => this.searchQuotes(event)}
-                  />
-                </label>
+                <div className="search-area">
+                  <label className="label">
+                    Search Quotes: <br></br>
+                    <input
+                      type="text"
+                      data-cy="search"
+                      placeholder="Search Quotes"
+                      name="search-form"
+                      className="input"
+                      aria-label="search quoes"
+                      onChange={(event) => this.searchQuotes(event)}
+                    />
+                  </label>
+                </div>
                 <QuestionContainer quotes={this.selectQuotesToRender()} />
               </>
             )}
