@@ -7,6 +7,12 @@
   padding: 5rem;
 }
 
+.hidden-box {
+  color: #486db6;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+
 /* @media screen and (max-width: 768px) {
   .quote-card {
     top: 12rem;

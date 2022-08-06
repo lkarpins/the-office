@@ -41,9 +41,6 @@ class App extends Component {
     const searchedQuotes = this.state.quotes.filter((quote) => {
       if (quote.content.toLowerCase().includes(value.toLowerCase())) {
         return quote;
-      } else {
-        console.log("cannot find");
-        return "Cannot find";
       }
     });
     this.setState({ filteredQuotes: searchedQuotes });
@@ -93,7 +90,7 @@ class App extends Component {
                     />
                   </label>
                 </div>
-                <QuestionContainer quotes={this.selectQuotesToRender()} />
+                {<QuestionContainer quotes={this.selectQuotesToRender()} />}
               </>
             )}
           />
