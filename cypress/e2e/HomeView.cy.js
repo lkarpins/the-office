@@ -4,36 +4,14 @@ describe("Home view page", () => {
   });
 
   it("should display a title", () => {
-    cy.get('[data-cy="logo"]').contains("PickMeUp");
+    cy.get('[data-cy="logo"]').contains("The Office-ionado");
   });
 
-  it("should contain a SEE FAVORITES button in navigation bar", () => {
+  it("should display a welcome message with a button titled START HERE to route to quotes page", () => {
     cy.get('[data-cy="app-button"]')
-      .contains("See Favorites")
+      .contains("Start Here")
       .click()
       .url()
-      .should("include", "/favorites");
-  });
-
-  it("should contain a compliment section", () => {
-    cy.get('[data-cy="selection-heading"]')
-      .get('[data-cy="selection-heading"]')
-      .contains("Are you looking for a confidence boost?")
-      .get('[data-cy="app-button"]')
-      .contains("Get Compliment")
-      .click()
-      .url()
-      .should("include", "/compliment");
-  });
-
-  it("should contain an advice section", () => {
-    cy.get('[data-cy="selection-heading"]')
-      .get('[data-cy="selection-heading"]')
-      .contains("Are you looking for sage wisdom?")
-      .get('[data-cy="app-button"]')
-      .contains("Get Advice")
-      .click()
-      .url()
-      .should("include", "/advice");
+      .should("include", "/quotes");
   });
 });
