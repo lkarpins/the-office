@@ -41,6 +41,9 @@ class App extends Component {
     const searchedQuotes = this.state.quotes.filter((quote) => {
       if (quote.content.toLowerCase().includes(value.toLowerCase())) {
         return quote;
+      } else {
+        console.log("cannot find");
+        return "Cannot find";
       }
     });
     this.setState({ filteredQuotes: searchedQuotes });
@@ -94,6 +97,16 @@ class App extends Component {
               </>
             )}
           />
+          <Route
+            path="*"
+            render={() => (
+              <h1 className="error-message" data-cy="error">
+                <div className="error-box">
+                  Uh oh! Something went wrong, please try again!
+                </div>
+              </h1>
+            )}
+          ></Route>
         </Switch>
       </div>
     );

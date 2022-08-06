@@ -19,7 +19,7 @@ export function HomeView() {
         <Link to="/quotes" className="link-style">
           <Button className="home-button" label="Start Here" />
         </Link>
-        <div className="holes hole-bottom"></div>
+        {/* <div className="holes hole-bottom"></div> */}
       </div>
     </div>
   );
