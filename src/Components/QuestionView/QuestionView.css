@@ -7,7 +7,13 @@
   padding: 30px;
 }
 
-.hidden-box {
-  z-index: 0;
-  color: #486db6;
+@media screen and (max-width: 768px) {
+  .quote-card {
+    top: 12rem;
+  }
+
+  .quote-card {
+    width: 15.5rem;
+    max-width: 100%;
+  }
 }
