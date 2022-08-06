@@ -4,6 +4,7 @@ import { Navigation } from "./Components/Navigation/Navigation";
 import { QuestionContainer } from "./Components/QuestionContainer/QuestionContainer";
 import { Route, Switch } from "react-router-dom";
 import { HomeView } from "./Components/HomeView/HomeView";
+import PropTypes from "prop-types";
 
 class App extends Component {
   constructor() {
@@ -99,3 +100,6 @@ class App extends Component {
   }
 }
 export default App;
+
+{
+}
