@@ -1,0 +1,40 @@
+{
+  "quotes": [
+    {
+      "_id": 1,
+      "content": "If I had a gun with two bullets and I was in a room with Hitler, Bin Laden, and Toby, I would shoot Toby twice.",
+      "character": {
+        "_id": 1,
+        "firstname": "Michael",
+        "lastname": "Scott"
+      }
+    },
+    {
+      "_id": 2,
+      "content": "Occasionally, I’ll hit somebody with my car. So sue me.",
+      "character": {
+        "_id": 1,
+        "firstname": "Michael",
+        "lastname": "Scott"
+      }
+    },
+    {
+      "_id": 3,
+      "content": "Everybody stay calm! Stay f*&#!#% calm!",
+      "character": {
+        "_id": 1,
+        "firstname": "Michael",
+        "lastname": "Scott"
+      }
+    },
+    {
+      "_id": 4,
+      "content": "I. Declare. Bankruptcy!",
+      "character": {
+        "_id": 1,
+        "firstname": "Michael",
+        "lastname": "Scott"
+      }
+    }
+  ]
+}
