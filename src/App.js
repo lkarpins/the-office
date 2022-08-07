@@ -26,6 +26,7 @@ class App extends Component {
         this.setState({
           quotes: quotes.quotes,
           loading: false,
+          value: "",
         });
       })
       .catch((error) => {
@@ -43,6 +44,8 @@ class App extends Component {
         return quote;
       }
     });
+    console.log(searchedQuotes);
+    console.log(value);
     this.setState({ filteredQuotes: searchedQuotes });
   };
 
