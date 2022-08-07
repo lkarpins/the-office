@@ -30,9 +30,7 @@ This application includes the following core functionality:
 - Ability for users to search quotes and reveal hidden characters of quotes
 - Multiple views handled by Router
 
-## Plannning Documents
-
-[Project Spec](https://frontend.turing.edu/projects/module-3/showcase.html)
+## [Deployment Link](https://the-office-ionado.herokuapp.com/)
 
 ## Illustrations
 
@@ -78,3 +76,7 @@ Future features could include:
 
 - [LinkedIn](https://www.linkedin.com/in/lidia-karpinski/)
 - [GitHub](https://github.com/lkarpins)
+- 
+## Plannning Documents
+
+[Project Spec](https://frontend.turing.edu/projects/module-3/showcase.html)
