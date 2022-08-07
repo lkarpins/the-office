@@ -11,7 +11,7 @@ export const QuestionView = ({ content, character }) => {
   };
   return (
     <div className="quote-card" data-cy="quote-card">
-      <h3 data-cy="quote-header">Who Stated...?</h3>
+      <h3 data-cy="quote-header">Who Said?</h3>
       <p data-cy="quote-content">{content}</p>
       {isHidden && <Button onClick={onRevealClick} label="Reveal" />}
       <div className="hidden-box">
@@ -21,7 +21,7 @@ export const QuestionView = ({ content, character }) => {
               {character.firstname} {character.lastname}
             </p>
             {parse(
-              `<img src="${character.gif}" alt="giphy" className="gif-image"/>`
+              `<img src="${character.gif}" alt="giphy" className="gif-image data-cy="gif-image"/>`
             )}
           </>
         )}

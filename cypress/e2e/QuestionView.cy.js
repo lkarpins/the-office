@@ -12,7 +12,7 @@ describe("Question View page", () => {
 
   it("should display quote header, content, and button", () => {
     cy.dataCy("quote-header")
-      .contains("Who Stated...?")
+      .contains("Who Said?")
       .dataCy("quote-content")
       .contains(
         "If I had a gun with two bullets and I was in a room with Hitler, Bin Laden, and Toby, I would shoot Toby twice."
@@ -21,7 +21,7 @@ describe("Question View page", () => {
       .contains("Reveal");
   });
 
-  it("should reveal name of character who stated quote when button clicked", () => {
+  it("should reveal name and giphy of character who stated quote when button clicked", () => {
     cy.dataCy("app-button")
       .contains("Reveal")
       .click()
