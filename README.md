@@ -76,7 +76,7 @@ Future features could include:
 
 - [LinkedIn](https://www.linkedin.com/in/lidia-karpinski/)
 - [GitHub](https://github.com/lkarpins)
-- 
+
 ## Plannning Documents
 
 [Project Spec](https://frontend.turing.edu/projects/module-3/showcase.html)
