@@ -19,8 +19,5 @@ export const QuestionContainer = ({ quotes }) => {
 };
 
 QuestionContainer.propTypes = {
-  id: PropTypes.number.isRequired,
-  key: PropTypes.number.isRequired,
-  content: PropTypes.string.isRequired,
-  character: PropTypes.string.isRequired,
+  quotes: PropTypes.array.isRequired,
 };

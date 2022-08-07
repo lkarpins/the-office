@@ -26,7 +26,7 @@ export const QuestionView = ({ content, character }) => {
 
 QuestionView.propTypes = {
   content: PropTypes.string.isRequired,
-  character: PropTypes.string.isRequired,
+  character: PropTypes.object.isRequired,
 };
 
 QuestionView.defaultProps = {

@@ -33,7 +33,7 @@ describe("Question View page", () => {
     cy.dataCy("search").should("be.visible");
   });
 
-  it("Should filter cards rendered by search", () => {
+  it("Should filter quote cards rendered by search", () => {
     cy.dataCy("search")
       .type("Everybody")
       .dataCy("quote-card")
