@@ -6,11 +6,11 @@ describe("Question View page", () => {
     cy.visit("http://localhost:3000/quotes");
   });
 
-  it("should display all quote cards", () => {
+  it("Should display all quote cards", () => {
     cy.dataCy("quote-card").should("have.length", 4);
   });
 
-  it("should display quote header, content, and button", () => {
+  it("Should display quote header, content, and button", () => {
     cy.dataCy("quote-header")
       .contains("Who Said?")
       .dataCy("quote-content")
@@ -21,15 +21,15 @@ describe("Question View page", () => {
       .contains("Reveal");
   });
 
-  it("should reveal name and giphy of character who stated quote when button clicked", () => {
+  it("Should reveal name and giphy of character who stated quote when button clicked", () => {
     cy.dataCy("app-button")
       .contains("Reveal")
       .click()
-      .dataCy("quote-character")
+      .dataCy("hidden-box")
       .should("be.visible");
   });
 
-  it("should display input box to search quotes", () => {
+  it("Should display input box to search quotes", () => {
     cy.dataCy("search").should("be.visible");
   });
 
@@ -40,7 +40,7 @@ describe("Question View page", () => {
       .should("have.length", 1);
   });
 
-  it("should route you home when you click on the title of the page", () => {
+  it("Should route you home when you click on the title of the page", () => {
     cy.dataCy("logo").click().url().should("include", "/");
   });
 });

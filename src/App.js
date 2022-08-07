@@ -103,7 +103,7 @@ class App extends Component {
                 {!this.state.noResults ? (
                   <QuestionContainer quotes={this.selectQuotesToRender()} />
                 ) : (
-                  <div className="quote-card no-results">
+                  <div className="quote-card no-results" data-cy="no-results">
                     <h2>{this.state.noResults}</h2>
                   </div>
                 )}

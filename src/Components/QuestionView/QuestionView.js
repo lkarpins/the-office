@@ -14,14 +14,14 @@ export const QuestionView = ({ content, character }) => {
       <h3 data-cy="quote-header">Who Said?</h3>
       <p data-cy="quote-content">{content}</p>
       {isHidden && <Button onClick={onRevealClick} label="Reveal" />}
-      <div className="hidden-box">
+      <div className="hidden-box" data-cy="hidden-box">
         {!isHidden && (
           <>
             <p data-cy="quote-character">
               {character.firstname} {character.lastname}
             </p>
             {parse(
-              `<img src="${character.gif}" alt="giphy" className="gif-image data-cy="gif-image"/>`
+              `<img src="${character.gif}" alt="giphy" className="gif-image />`
             )}
           </>
         )}

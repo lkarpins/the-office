@@ -18,7 +18,7 @@ describe("Error View Page", () => {
   });
 
   it("Should display error message when there is a broken URL", () => {
-    cy.get('[data-cy="app-button"]')
+    cy.dataCy("app-button")
       .contains("Start Here")
       .click()
       .visit("http://localhost:3000/quotess")
