@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button } from "../Button/Button";
 import "./QuestionView.css";
 import PropTypes from "prop-types";
+import parse from "html-react-parser";
 
 export const QuestionView = ({ content, character }) => {
   const [isHidden, setIsHidden] = useState(true);
@@ -15,9 +16,14 @@ export const QuestionView = ({ content, character }) => {
       {isHidden && <Button onClick={onRevealClick} label="Reveal" />}
       <div className="hidden-box">
         {!isHidden && (
-          <p data-cy="quote-character">
-            {character.firstname} {character.lastname}
-          </p>
+          <>
+            <p data-cy="quote-character">
+              {character.firstname} {character.lastname}
+            </p>
+            {parse(
+              `<img src="${character.gif}" alt="giphy" className="gif-image"/>`
+            )}
+          </>
         )}
       </div>
     </div>

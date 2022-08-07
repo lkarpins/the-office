@@ -39,20 +39,20 @@ class App extends Component {
   };
 
   searchQuotes = (event) => {
+    this.setState({ noResults: "" });
     const { value } = event.target;
     const searchedQuotes = this.state.quotes.filter((quote) => {
       if (quote.content.toLowerCase().includes(value.toLowerCase())) {
         return quote;
       }
     });
-    console.log(searchedQuotes);
-    console.log(value);
+
     this.setState({ filteredQuotes: searchedQuotes, value: value });
+    this.selectQuotesToRender();
   };
 
   selectQuotesToRender = () => {
     if (this.state.value.length > 0 && !this.state.filteredQuotes.length) {
-      console.log("Sorry, no quotes found!");
       return this.setState({ noResults: "Sorry, no quotes found!" });
     } else if (!this.state.value.length && !this.state.filteredQuotes.length) {
       return this.state.quotes;
@@ -93,7 +93,7 @@ class App extends Component {
               <>
                 <div className="search-area">
                   <label className="label">
-                    Search Quotes: <br></br>
+                    Search Quotes <br></br>
                   </label>
                   <input
                     type="text"
@@ -108,7 +108,9 @@ class App extends Component {
                 {!this.state.noResults ? (
                   <QuestionContainer quotes={this.selectQuotesToRender()} />
                 ) : (
-                  <h2>{this.state.noResults}</h2>
+                  <div className="quote-card no-results">
+                    <h2>{this.state.noResults}</h2>
+                  </div>
                 )}
               </>
             )}

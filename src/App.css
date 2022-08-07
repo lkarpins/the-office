@@ -17,10 +17,15 @@
   display: flex;
   align-content: center;
 }
-.loading,
-h2 {
+.loading {
   color: #ffffff;
   font-size: 2.5rem;
+}
+
+.no-results {
+  margin: auto;
+  max-width: 500px;
+  margin-top: 2rem;
 }
 
 .App-header {
@@ -38,6 +43,12 @@ h2 {
   color: #ffffff;
   font-weight: 900;
   padding: 0.75rem;
+}
+
+.search-area {
+  background-color: #486db6;
+  margin: 0;
+  padding: 2rem;
 }
 
 .input {
