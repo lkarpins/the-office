@@ -10,8 +10,8 @@ export const QuestionView = ({ content, character }) => {
   };
   return (
     <div className="quote-card" data-cy="quote-card">
-      <h3>Who Stated...?</h3>
-      <p>{content}</p>
+      <h3 data-cy="quote-header">Who Stated...?</h3>
+      <p data-cy="quote-content">{content}</p>
       {isHidden && <Button onClick={onRevealClick} label="Reveal" />}
       <div className="hidden-box">
         {!isHidden && (

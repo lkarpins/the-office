@@ -10,6 +10,17 @@ describe("Question View page", () => {
     cy.dataCy("quote-card").should("have.length", 4);
   });
 
+  it("should display quote header, content, and button", () => {
+    cy.dataCy("quote-header")
+      .contains("Who Stated...?")
+      .dataCy("quote-content")
+      .contains(
+        "If I had a gun with two bullets and I was in a room with Hitler, Bin Laden, and Toby, I would shoot Toby twice."
+      )
+      .dataCy("app-button")
+      .contains("Reveal");
+  });
+
   it("should display input box to search quotes", () => {
     cy.dataCy("search").should("be.visible");
   });
