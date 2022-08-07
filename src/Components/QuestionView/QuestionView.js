@@ -15,7 +15,7 @@ export const QuestionView = ({ content, character }) => {
       {isHidden && <Button onClick={onRevealClick} label="Reveal" />}
       <div className="hidden-box">
         {!isHidden && (
-          <p>
+          <p data-cy="quote-character">
             {character.firstname} {character.lastname}
           </p>
         )}

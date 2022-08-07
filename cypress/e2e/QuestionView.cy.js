@@ -21,6 +21,14 @@ describe("Question View page", () => {
       .contains("Reveal");
   });
 
+  it("should reveal name of character who stated quote when button clicked", () => {
+    cy.dataCy("app-button")
+      .contains("Reveal")
+      .click()
+      .dataCy("quote-character")
+      .should("be.visible");
+  });
+
   it("should display input box to search quotes", () => {
     cy.dataCy("search").should("be.visible");
   });
