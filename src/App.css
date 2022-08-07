@@ -13,6 +13,14 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.loading-box {
+  display: flex;
+  align-content: center;
+}
+.loading {
+  color: #ffffff;
+  font-size: 5rem;
+}
 
 .App-header {
   background-color: #282c34;
@@ -22,7 +30,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ffffff;
 }
 
 .label {

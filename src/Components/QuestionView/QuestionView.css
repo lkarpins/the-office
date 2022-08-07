@@ -12,14 +12,3 @@
   font-weight: 900;
   text-transform: capitalize;
 }
-
-/* @media screen and (max-width: 768px) {
-  .quote-card {
-    top: 12rem;
-  }
-
-  .quote-card {
-    width: 15.5rem;
-    max-width: 100%;
-  }
-} */
