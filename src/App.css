@@ -13,6 +13,20 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.loading-box {
+  display: flex;
+  align-content: center;
+}
+.loading {
+  color: #ffffff;
+  font-size: 2.5rem;
+}
+
+.no-results {
+  margin: auto;
+  max-width: 500px;
+  margin-top: 2rem;
+}
 
 .App-header {
   background-color: #282c34;
@@ -22,19 +36,30 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ffffff;
 }
 
 .label {
   color: #ffffff;
   font-weight: 900;
+  padding: 0.75rem;
 }
 
-@keyframes App-logo-spin {
+.search-area {
+  background-color: #486db6;
+  margin: 0;
+  padding: 2rem;
+}
+
+.input {
+  margin-top: 1rem;
+}
+
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */

@@ -12,6 +12,8 @@ class App extends Component {
       quotes: [],
       filteredQuotes: [],
       error: false,
+      value: "",
+      noResults: "",
     };
   }
 
@@ -36,24 +38,33 @@ class App extends Component {
   };
 
   searchQuotes = (event) => {
+    this.setState({ noResults: "" });
     const { value } = event.target;
     const searchedQuotes = this.state.quotes.filter((quote) => {
       if (quote.content.toLowerCase().includes(value.toLowerCase())) {
         return quote;
       }
     });
-    this.setState({ filteredQuotes: searchedQuotes });
+
+    this.setState({ filteredQuotes: searchedQuotes, value: value });
+    this.selectQuotesToRender();
   };
 
   selectQuotesToRender = () => {
-    return !this.state.filteredQuotes.length
-      ? this.state.quotes
-      : this.state.filteredQuotes;
+    if (this.state.value.length > 0 && !this.state.filteredQuotes.length) {
+      return this.setState({ noResults: "Sorry, no quotes found!" });
+    } else if (!this.state.value.length && !this.state.filteredQuotes.length) {
+      return this.state.quotes;
+    } else {
+      return this.state.filteredQuotes;
+    }
   };
 
   render() {
     if (this.state.loading) {
-      return <p className="loading">LOADING!!!</p>;
+      <div className="loading-box">
+        return <p className="loading">LOADING!!!</p>;
+      </div>;
     }
     return (
       <div className="App">
@@ -77,25 +88,44 @@ class App extends Component {
               <>
                 <div className="search-area">
                   <label className="label">
-                    Search Quotes: <br></br>
-                    <input
-                      type="text"
-                      data-cy="search"
-                      placeholder="Search Quotes"
-                      name="search-form"
-                      className="input"
-                      aria-label="search quoes"
-                      onChange={(event) => this.searchQuotes(event)}
-                    />
+                    Search Quotes <br></br>
                   </label>
+                  <input
+                    type="text"
+                    data-cy="search"
+                    placeholder="Search Quotes"
+                    name="search-form"
+                    className="input"
+                    aria-label="search quoes"
+                    onChange={(event) => this.searchQuotes(event)}
+                  />
                 </div>
-                <QuestionContainer quotes={this.selectQuotesToRender()} />
+                {!this.state.noResults ? (
+                  <QuestionContainer quotes={this.selectQuotesToRender()} />
+                ) : (
+                  <div className="quote-card no-results" data-cy="no-results">
+                    <h2>{this.state.noResults}</h2>
+                  </div>
+                )}
               </>
             )}
           />
+          <Route
+            path="*"
+            render={() => (
+              <h1 className="error-message" data-cy="error">
+                <div className="error-box">
+                  Uh oh! Something went wrong, please try again!
+                </div>
+              </h1>
+            )}
+          ></Route>
         </Switch>
       </div>
     );
   }
 }
 export default App;
+
+// {
+// }

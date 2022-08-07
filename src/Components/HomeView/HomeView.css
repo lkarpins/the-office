@@ -1,5 +1,7 @@
 .welcome-view {
   display: flex;
+  max-width: 700px;
+  margin: auto;
   margin-top: 10rem;
   box-sizing: border-box;
   background-color: #ffffff;

@@ -1,6 +1,7 @@
 import React from "react";
 import { QuestionView } from "../QuestionView/QuestionView";
 import "./QuestionContainer.css";
+import PropTypes from "prop-types";
 
 export const QuestionContainer = ({ quotes }) => {
   const questionCard = quotes.map((quote) => {
@@ -15,4 +16,8 @@ export const QuestionContainer = ({ quotes }) => {
   });
 
   return <div className="question-container">{questionCard}</div>;
+};
+
+QuestionContainer.propTypes = {
+  quotes: PropTypes.array.isRequired,
 };
