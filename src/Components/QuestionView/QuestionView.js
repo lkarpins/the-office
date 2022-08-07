@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "../Button/Button";
 import "./QuestionView.css";
+import PropTypes from "prop-types";
 
-export const QuestionView = ({ id, content, character }) => {
+export const QuestionView = ({ content, character }) => {
   const [isHidden, setIsHidden] = useState(true);
   const onRevealClick = () => {
     setIsHidden(false);
@@ -21,4 +22,13 @@ export const QuestionView = ({ id, content, character }) => {
       </div>
     </div>
   );
+};
+
+QuestionView.propTypes = {
+  content: PropTypes.string.isRequired,
+  character: PropTypes.string.isRequired,
+};
+
+QuestionView.defaultProps = {
+  isHidden: true,
 };
