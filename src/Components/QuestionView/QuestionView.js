@@ -21,7 +21,7 @@ export const QuestionView = ({ content, character }) => {
               {character.firstname} {character.lastname}
             </p>
             {parse(
-              `<img src="${character.gif}" alt="giphy" className="gif-image />`
+              `<img src="${character.gif}" alt="giphy" className="gif-image" />`
             )}
           </>
         )}
