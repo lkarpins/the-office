@@ -24,6 +24,7 @@ class App extends Component {
     fetch("https://the-office-api-11.herokuapp.com/")
       .then((res) => res.json())
       .then((quotes) => {
+        this.randomizeQuotes(quotes.quotes);
         this.setState({
           quotes: quotes.quotes,
           loading: false,
@@ -57,6 +58,15 @@ class App extends Component {
       return this.state.quotes;
     } else {
       return this.state.filteredQuotes;
+    }
+  };
+
+  randomizeQuotes = (quotes) => {
+    for (let i = quotes.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let temp = quotes[i];
+      quotes[i] = quotes[j];
+      quotes[j] = temp;
     }
   };
 
