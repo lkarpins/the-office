@@ -36,6 +36,9 @@ This application includes the following core functionality:
 
 ## Illustrations
 
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/99596577/183311588-c5c20e9f-78db-43b1-a305-8f466284a205.gif)
+
+
 ## Technologies and Tools
 
 - JavaScript
