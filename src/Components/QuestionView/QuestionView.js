@@ -13,7 +13,13 @@ export const QuestionView = ({ content, character }) => {
     <div className="quote-card" data-cy="quote-card">
       <h3 data-cy="quote-header">Who Said?</h3>
       <p data-cy="quote-content">{content}</p>
-      {isHidden && <Button onClick={onRevealClick} label="Reveal" />}
+      {isHidden && (
+        <Button
+          className="reveal-button"
+          onClick={onRevealClick}
+          label="Reveal"
+        />
+      )}
       <div className="hidden-box" data-cy="hidden-box">
         {!isHidden && (
           <>

@@ -21,7 +21,7 @@ class App extends Component {
     this.setState({
       loading: true,
     });
-    fetch("https://the-office-api-11.herokuapp.com/")
+    fetch("https://web-production-62cc.up.railway.app/")
       .then((res) => res.json())
       .then((quotes) => {
         this.randomizeQuotes(quotes.quotes);

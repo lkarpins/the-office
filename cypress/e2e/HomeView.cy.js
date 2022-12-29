@@ -11,7 +11,11 @@ describe("Home view page", () => {
   });
 
   it("should display a welcome message with a button titled START HERE to route to quotes page", () => {
-    cy.dataCy("app-button")
+    cy.dataCy("welcome-text")
+      .contains(
+        "Welcome, Office fan! The series is over, but the memories live on! Test your skills and see if you can guess which characters stated these quotes!"
+      )
+      .dataCy("app-button")
       .contains("Start Here")
       .click()
       .url()

@@ -17,3 +17,7 @@
   font-weight: 900;
   text-transform: capitalize;
 }
+
+.reveal-button :hover {
+  transform: scale(1.1);
+}

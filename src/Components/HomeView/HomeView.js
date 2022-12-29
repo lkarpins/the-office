@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export function HomeView() {
   return (
     <div className="welcome-view">
-      <div className="text">
+      <div className="welcome-text" data-cy="welcome-text">
         <p>Welcome, Office fan! </p>
         <br />
         <br />
